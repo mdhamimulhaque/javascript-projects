@@ -5,7 +5,8 @@ const text = document.getElementById('text');
 
 input_field.addEventListener('keyup', function (e) {
     const input_text = e.target.value;
-    if (input_text === 'delete') {
+    const inputValue = input_text.toLowerCase()
+    if (inputValue === 'delete') {
         delete_btn.removeAttribute('disabled');
         delete_btn.className = 'delete_btn_active';
         // submit work
