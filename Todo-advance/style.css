@@ -27,9 +27,10 @@ h4{
 .current_date,.current_month,.current_day{
     color:#00AC61;
 }
-.todo_title{
+.todo_title,.point_icon{
     color:#EFF54D;
     font-size: 20px;
+    margin-right: 5px;
 }
 
 hr {
@@ -37,7 +38,7 @@ hr {
     background-color: #DEE1E6;
 }
 
-.create_button {
+.add_button {
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -51,14 +52,14 @@ hr {
     -ms-transition: .3s;
     -o-transition: .3s;
 }
-.create_button:hover {
+.add_button:hover {
   background-color: #1FAA59;
 }
 .btn_box {
     margin-top: -41px;
 }
 
-.todo_body{
+.todo_item{
     border:1px solid #DEE1E6;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -66,4 +67,5 @@ hr {
     -ms-border-radius: 5px;
     -o-border-radius: 5px;
     padding: 8px;
+    margin-bottom: 20px;
 }
