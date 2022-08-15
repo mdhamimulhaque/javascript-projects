@@ -64,7 +64,7 @@ const formValidation = () => {
     })
 }
 
-
+// ======> collect data <======
 let data = {};
 
 const collectDataFun = () => {
@@ -117,7 +117,14 @@ const createItemFun = (data) => {
     editUpdateBox.appendChild(editIcon);
     editUpdateBox.appendChild(deleteIcon);
 
+    resetFormFun()
+}
 
+
+// ======> reset form value <======
+const resetFormFun = () => {
+    inputTitle.value = '';
+    inputText.value = '';
 }
 
 
