@@ -52,19 +52,31 @@ form.addEventListener('submit', (e) => {
 });
 
 const formValidation = () => {
-    formSubmitBtn.addEventListener('click', () => {
+    formSubmitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         if (inputTitle.value === '') {
             noticeMsg.innerHTML = "Your Value is Empty";
         } else {
-            // console.log('yes, value coming');
+            collectDataFun();
             noticeMsg.innerHTML = "";
+
         }
     })
 }
 
 
+let data = {};
+
+const collectDataFun = () => {
+    data['title'] = inputTitle.value;
+    data['text'] = inputText.value;
+    createItemFun(data);
+}
+
+
+
 // ======> create function <=====
-const createItemFun = () => {
+const createItemFun = (data) => {
     //------> todo-item div create
     const todoItem = document.createElement('div');
     todoItem.className = 'todo_item';
@@ -81,12 +93,12 @@ const createItemFun = () => {
     //-----> todo-title create
     const todo_title = document.createElement('span');
     todo_title.className = 'todo_title';
-    todo_title.innerText = 'i am title';
+    todo_title.innerText = data.title;
     todoTitleBox_h4.appendChild(todo_title);
 
     // ------> todo-text create
     const todoText = document.createElement('p');
-    todoText.innerText = 'this is text .write your task. edghfe wser waerfo ioawrf';
+    todoText.innerText = data.text;
     todoText.className = 'todo_text';
     todoItem.appendChild(todoText);
 
