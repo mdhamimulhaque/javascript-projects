@@ -24,12 +24,12 @@ h4{
 .todo_header{
     margin-bottom:20px;
 }
-.current_date,.current_month{
+.current_date,.current_month,.current_day{
     color:#00AC61;
 }
 .todo_title{
     color:#EFF54D;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 hr {
