@@ -11,6 +11,8 @@ h4{
 
 .todo_wrapper{
     max-width: 320px;
+    height:550px;
+    overflow-y: auto;
     margin: 0 auto;
     background-image: linear-gradient(#EFF54D,#00AC61);
     border-radius: 10px;
@@ -21,6 +23,22 @@ h4{
     padding:15px;
     color:#fff;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+    ::-webkit-scrollbar-track {
+    background: #EFF54D; 
+  }
+    ::-webkit-scrollbar-thumb {
+      background: #00AC61;
+      border-radius:5px;
+      -webkit-border-radius:5px;
+      -moz-border-radius:5px;
+      -ms-border-radius:5px;
+      -o-border-radius:5px;
+}
+
 .todo_header{
     margin-bottom:20px;
 }
