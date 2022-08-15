@@ -42,6 +42,7 @@ const formSubmitBtn = document.getElementById('submit_btn');
 const formCloseBtn = document.getElementById('close_btn');
 const inputTitle = document.getElementById('input_title');
 const inputText = document.getElementById('input_text');
+const inputDate = document.getElementById('input_date');
 const noticeMsg = document.getElementById('notice_msg');
 const deleteIcon = document.getElementById('delete_icon');
 const editIcon = document.getElementById('edit_icon');
@@ -76,6 +77,7 @@ let data = {};
 const collectDataFun = () => {
     data['title'] = inputTitle.value;
     data['text'] = inputText.value;
+    data['date'] = `Due Date : ${inputDate.value}`;
     createItemFun(data);
 }
 
@@ -108,6 +110,12 @@ const createItemFun = (data) => {
     todoText.className = 'todo_text';
     todoItem.appendChild(todoText);
 
+    // ------> todo-task-time create
+    const todoDate = document.createElement('small');
+    todoDate.innerText = data.date;
+    todoDate.className = 'todo_date';
+    todoItem.appendChild(todoDate);
+
     //------> edit-delete icon
     const editUpdateBox = document.createElement('div');
     editUpdateBox.className = 'edit_update_icon_box';
@@ -116,6 +124,9 @@ const createItemFun = (data) => {
     // ------> edit icon
     const editIcon = document.createElement('i');
     editIcon.className = 'fa-solid fa-pen-to-square';
+    editIcon.setAttribute('data-bs-toggle', 'modal');
+    editIcon.setAttribute('data-bs-target', '#form');
+
 
     const deleteIcon = document.createElement('i');
     deleteIcon.className = 'fa-solid fa-trash-can';
@@ -131,19 +142,23 @@ const createItemFun = (data) => {
 const resetFormFun = () => {
     inputTitle.value = '';
     inputText.value = '';
+    inputDate.value = '';
 }
 
 // ======> remove functionality <======
 todoBody.addEventListener("click", (e) => {
+    e.preventDefault()
     e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
 })
 
 // ======> edit/ update functionality <======
 
-editIcon.addEventListener('click', (e) => {
+todoBody.addEventListener('click', (e) => {
+    e.preventDefault()
     const parentItem = e.target.parentNode.parentNode;
     inputTitle.value = parentItem?.children[0]?.children[1].innerHTML;
     inputText.value = parentItem?.children[1].innerHTML;
+    inputDate.value = parentItem?.children[2].innerHTML;
 })
 
 

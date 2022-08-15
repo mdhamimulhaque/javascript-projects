@@ -44,6 +44,7 @@
                                     <span class="todo_title">This is title section</span>
                                 </h4>
                                 <p class="todo_text">Describe about your task.</p>
+                                <small class="todo_date">Due Date : 1999-01-20</small>
                                 <div class="edit_update_icon_box">
                                     <i id="edit_icon" class="fa-solid fa-pen-to-square" data-bs-toggle="modal"
                                         data-bs-target="#form"></i>
@@ -74,9 +75,13 @@
                         <label for="input_title">Task Title</label>
                         <input id="input_title" type="text" placeholder="Task Title" class="form-control">
                         <p id="notice_msg" class="mb-2 "></p>
+
                         <label for="input_text">Task Description</label>
                         <textarea id="input_text" type="text" placeholder="Task Description" rows="4" cols="50"
                             class="form-control mb-2"></textarea>
+
+                        <label for="input_title">Task's Date</label>
+                        <input id="input_date" type="date" placeholder="Set Your Task's Date" class="form-control mb-2">
 
                         <div class="modal-footer">
                             <button id="close_btn" type="button" class="btn btn-danger"
