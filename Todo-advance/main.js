@@ -36,13 +36,16 @@ currentMonth.innerHTML = month;
 
 // ===============> start todo functionality <================
 const addTaskBtn = document.querySelector('.add_button');
-const todoBody = document.querySelector('.todo_body');
+const todoBody = document.getElementById('todo_body');
 const form = document.getElementById('form');
 const formSubmitBtn = document.getElementById('submit_btn');
 const formCloseBtn = document.getElementById('close_btn');
 const inputTitle = document.getElementById('input_title');
 const inputText = document.getElementById('input_text');
 const noticeMsg = document.getElementById('notice_msg');
+const deleteIcon = document.getElementById('delete_icon');
+const editIcon = document.querySelector('edit_icon');
+
 
 
 // ======> form submit & validation <=====
@@ -128,6 +131,10 @@ const resetFormFun = () => {
     inputTitle.value = '';
     inputText.value = '';
 }
+
+todoBody.addEventListener("click", (e) => {
+    e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode)
+})
 
 
 
