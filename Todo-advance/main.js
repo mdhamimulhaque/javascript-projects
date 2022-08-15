@@ -21,6 +21,16 @@ const month = months[monthIndex];
 
 // =============> set value
 currentDay.innerHTML = `${day},`;
-currentDate.innerHTML = `${day}th`;
+
+if (date == '1') {
+    currentDate.innerHTML = `${date}st`;
+} else if (date == '2') {
+    currentDate.innerHTML = `${date}nd`;
+} else if (date == '3') {
+    currentDate.innerHTML = `${date}rd`;
+} else {
+    currentDate.innerHTML = `${date}th`;
+}
+
 currentMonth.innerHTML = month;
 
