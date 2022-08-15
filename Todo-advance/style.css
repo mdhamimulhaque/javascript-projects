@@ -93,8 +93,12 @@ hr {
     cursor: pointer;
 }
 .fa-solid.fa-pen-to-square:hover{
-   color:#1FAA59;
+   color:#6EC72D;
 }
 .fa-solid.fa-trash-can:hover{
    color:#E21717;
+}
+
+#notice_msg{
+    color:#E21717;
 }

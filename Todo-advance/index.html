@@ -67,19 +67,22 @@
                         <h5 class="modal-title" id="exampleModalLabel">Create Your Task LIst</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <form action="#">
+
+                    <form action="#" id="form">
+                        <div class="modal-body">
                             <label for="#">Task Title</label>
-                            <input type="text" placeholder="Task Title" class="form-control mb-3">
+                            <input id="input_title" type="text" placeholder="Task Title" class="form-control">
+                            <p id="notice_msg" class="mb-2 "></p>
                             <label for="#">Task Description</label>
-                            <textarea type="text" placeholder="Task Description" rows="4" cols="50"
-                                class="form-control mb-3"></textarea>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-success">Save changes</button>
-                    </div>
+                            <textarea id="input_text" type="text" placeholder="Task Description" rows="4" cols="50"
+                                class="form-control mb-2"></textarea>
+                            <div class="modal-footer">
+                                <button id="close_btn" type="button" class="btn btn-danger"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button id="submit_btn" type="submit" class="btn btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
