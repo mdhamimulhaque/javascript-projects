@@ -52,16 +52,18 @@ form.addEventListener('submit', (e) => {
 });
 
 const formValidation = () => {
-    formSubmitBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (inputTitle.value === '') {
-            noticeMsg.innerHTML = "Your Value is Empty";
-        } else {
-            collectDataFun();
-            noticeMsg.innerHTML = "";
-
-        }
-    })
+    if (inputTitle.value === '') {
+        noticeMsg.innerHTML = "Your Value is Empty";
+    } else {
+        noticeMsg.innerHTML = "";
+        collectDataFun();
+        formSubmitBtn.setAttribute("data-bs-dismiss", "modal");
+        //----- for dabble click off
+        formSubmitBtn.click();
+        (() => {
+            formSubmitBtn.setAttribute("data-bs-dismiss", "");
+        })();
+    }
 }
 
 // ======> collect data <======
