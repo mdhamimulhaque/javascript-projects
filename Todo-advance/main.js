@@ -77,7 +77,7 @@ let data = {};
 const collectDataFun = () => {
     data['title'] = inputTitle.value;
     data['text'] = inputText.value;
-    data['date'] = `Due Date : ${inputDate.value}`;
+    data['date'] = inputDate.value;
     createItemFun(data);
 }
 
@@ -147,18 +147,17 @@ const resetFormFun = () => {
 
 // ======> remove functionality <======
 todoBody.addEventListener("click", (e) => {
-    e.preventDefault()
     e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
 })
 
 // ======> edit/ update functionality <======
 
 todoBody.addEventListener('click', (e) => {
-    e.preventDefault()
     const parentItem = e.target.parentNode.parentNode;
     inputTitle.value = parentItem?.children[0]?.children[1].innerHTML;
     inputText.value = parentItem?.children[1].innerHTML;
     inputDate.value = parentItem?.children[2].innerHTML;
+    console.log(parentItem?.children[2].innerHTML)
 })
 
 
