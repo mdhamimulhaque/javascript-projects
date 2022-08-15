@@ -63,6 +63,23 @@ todoText.innerText = 'this is text .write your task. edghfe wser waerfo ioawrf';
 todoText.className = 'todo_text';
 todoItem.appendChild(todoText);
 
+//------> edit-delete icon
+const editUpdateBox = document.createElement('div');
+editUpdateBox.className = 'edit_update_icon_box';
+todoItem.appendChild(editUpdateBox);
+
+// ------> edit icon
+const editIcon = document.createElement('i');
+editIcon.className = 'fa-solid fa-pen-to-square';
+
+const deleteIcon = document.createElement('i');
+deleteIcon.className = 'fa-solid fa-trash-can';
+
+editUpdateBox.appendChild(editIcon);
+editUpdateBox.appendChild(deleteIcon);
+
+
+
 
 
 

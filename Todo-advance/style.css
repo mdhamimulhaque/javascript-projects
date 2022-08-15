@@ -68,4 +68,33 @@ hr {
     -o-border-radius: 5px;
     padding: 8px;
     margin-bottom: 20px;
+    position: relative;
+}
+
+.todo_text {
+    margin-top: 15px;
+}
+
+.edit_update_icon_box {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
+}
+
+.fa-solid.fa-pen-to-square,.fa-solid.fa-trash-can{
+    transition: .3s;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -ms-transition: .3s;
+    -o-transition: .3s;
+    cursor: pointer;
+}
+.fa-solid.fa-pen-to-square:hover{
+   color:#1FAA59;
+}
+.fa-solid.fa-trash-can:hover{
+   color:#E21717;
 }
