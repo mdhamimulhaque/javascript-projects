@@ -44,7 +44,8 @@ const inputTitle = document.getElementById('input_title');
 const inputText = document.getElementById('input_text');
 const noticeMsg = document.getElementById('notice_msg');
 const deleteIcon = document.getElementById('delete_icon');
-const editIcon = document.querySelector('edit_icon');
+const editIcon = document.getElementById('edit_icon');
+
 
 
 
@@ -132,10 +133,18 @@ const resetFormFun = () => {
     inputText.value = '';
 }
 
+// ======> remove functionality <======
 todoBody.addEventListener("click", (e) => {
-    e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode)
+    e.target.parentNode.parentNode.parentNode.removeChild(e.target.parentNode.parentNode);
 })
 
+// ======> edit/ update functionality <======
+
+editIcon.addEventListener('click', (e) => {
+    const parentItem = e.target.parentNode.parentNode;
+    inputTitle.value = parentItem?.children[0]?.children[1].innerHTML;
+    inputText.value = parentItem?.children[1].innerHTML;
+})
 
 
 
