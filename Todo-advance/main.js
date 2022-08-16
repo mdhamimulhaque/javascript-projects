@@ -78,6 +78,7 @@ const collectDataFun = () => {
     data['title'] = inputTitle.value;
     data['text'] = inputText.value;
     data['date'] = inputDate.value;
+
     createItemFun(data);
 }
 
@@ -159,8 +160,6 @@ todoBody.addEventListener('click', (e) => {
     inputDate.value = parentItem?.children[2].innerHTML;
     console.log(parentItem?.children[2].innerHTML)
 })
-
-
 
 
 
