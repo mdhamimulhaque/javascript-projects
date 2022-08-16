@@ -12,10 +12,51 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
-    <header class="text-center">
-        <h2 class="text-4xl my-8">Welcome To <span class="font-semibold text-teal-400">Hamim's Bank</span></h2>
-    </header>
+<body class="bg-teal-50 h-screen flex justify-center items-center">
+
+    <main class="container mx-auto">
+
+        <header class="text-center">
+            <h2 class="text-4xl my-8">Welcome To <span class="font-semibold text-teal-400">Hamim's Bank</span></h2>
+        </header>
+
+        <div class="bank_system_wrapper bg-slate-100 p-8 shadow-lg max-w-2xl mx-auto md:w-full">
+            <div class="amount_display_area grid grid-cols-3 gap-x-6">
+                <div class="deposit_box bg-teal-400 p-5 rounded-xl mb-6 text-white text-center">
+                    <h4 class="font-semibold text-xl">Deposit</h4>
+                    <h2 class="text-4xl">$<span>00</span></h2>
+                </div>
+                <div class="withdraw_box bg-teal-400 p-5 rounded-xl mb-6 text-white text-center">
+                    <h4 class="font-semibold text-xl">withdraw</h4>
+                    <h2 class="text-4xl">$<span>00</span></h2>
+                </div>
+                <div class="total_balence_box bg-teal-400 p-5 rounded-xl mb-6 text-white text-center">
+                    <h4 class="font-semibold text-xl">Total Balance</h4>
+                    <h2 class="text-4xl">$<span>1000</span></h2>
+                </div>
+            </div>
+            <div class="deposit_withdraw_area grid grid-cols-2 gap-x-6">
+                <div class="deposit_box bg-emerald-400 p-5 rounded-xl text-white">
+                    <p class="mb-3">Deposit Your Money</p>
+                    <form action="#">
+                        <input type="number" placeholder="Deposit amount"
+                            class="block w-full h-11 mb-6 pl-2.5 outline-0">
+                        <button type="submit"
+                            class="px-6 py-3 bg-emerald-600 text-white transition duration-300 font-semibold rounded-md hover:bg-emerald-300 hover:text-emerald-50 ">Deposit</button>
+                    </form>
+                </div>
+                <div class="withdraw_box bg-purple-400 p-5 rounded-xl text-white">
+                    <p class="mb-3">Withdraw Your Money</p>
+                    <form action="#">
+                        <input type="number" placeholder="Withdraw amount"
+                            class="block w-full h-11 mb-6 pl-2.5 outline-0">
+                        <button type="submit"
+                            class="px-6 py-3 bg-purple-600 text-white transition duration-300 font-semibold rounded-md hover:bg-purple-300 hover:text-emerald-50 ">Withdraw</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
 
 </body>
 
