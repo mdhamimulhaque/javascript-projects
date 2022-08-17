@@ -1,22 +1,4 @@
-// ========== > login form <==========
-const emailField = document.getElementById("email_field");
-const passwordField = document.getElementById("password_field");
-const logInForm = document.getElementById('login_form');
 
-
-// logInForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     if (emailField.value == "mdhamimulhaque@gmail.com" && passwordField.value == '12345') {
-//         window.location.href = "bank.html";
-//     } else {
-//         alert(`sorry!!! your email or password was incorrect.
-
-//         For testing purpose use this - 
-//         email : mdhamimulhaque@gmail.com
-//         pass  : 12345
-//         ` )
-//     }
-// });
 
 // ===========> Banking system start <==========
 // -----> get input value <-----
@@ -76,7 +58,7 @@ document.getElementById('withdraw_form').addEventListener('submit', (e) => {
         alert("Sorry!!! Your input value is empty.")
     } else {
         if (displayTotal < withdrawInputValue) {
-            alert("Sorry!! Your total balance is not enough to withdraw");
+            alert("Sorry!! Your total balance is low. Not enough to withdraw");
         } else {
             const newWithdrawTotal = withdrawDisplayValue + withdrawInputValue;
             setDisplayValue("display_withdraw", newWithdrawTotal);
