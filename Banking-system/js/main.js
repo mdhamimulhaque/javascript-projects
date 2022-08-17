@@ -49,14 +49,18 @@ document.getElementById('deposit_form').addEventListener('submit', (e) => {
     const depositInputValue = getInputValue("deposit_input");
     const depositDisplayValue = getDisplayValue("display_deposit");
 
-    //-----> set deposit value
-    const newDepositTotal = depositInputValue + depositDisplayValue;
-    setDisplayValue("display_deposit", newDepositTotal);
+    if (isNaN(depositInputValue)) {
+        alert("Sorry!!! Sorry!!! Your input value is empty.")
+    } else {
+        //-----> set deposit value
+        const newDepositTotal = depositInputValue + depositDisplayValue;
+        setDisplayValue("display_deposit", newDepositTotal);
 
-    //-----> set total value
-    const displayTotal = getDisplayValue('total_value');
-    const newTotalValue = displayTotal + depositInputValue;
-    setDisplayValue('total_value', newTotalValue)
+        //-----> set total value
+        const displayTotal = getDisplayValue('total_value');
+        const newTotalValue = displayTotal + depositInputValue;
+        setDisplayValue('total_value', newTotalValue)
+    }
 });
 
 
@@ -66,12 +70,23 @@ document.getElementById('withdraw_form').addEventListener('submit', (e) => {
 
     const withdrawInputValue = getInputValue("withdraw_input");
     const withdrawDisplayValue = getDisplayValue("display_withdraw");
-
-    const newWithdrawTotal = withdrawDisplayValue + withdrawInputValue;
-    setDisplayValue("display_withdraw", newWithdrawTotal);
-
     const displayTotal = getDisplayValue("total_value");
-    const newTotalValue = displayTotal - withdrawInputValue;
-    setDisplayValue("total_value", newTotalValue);
+
+    if (isNaN(withdrawInputValue)) {
+        alert("Sorry!!! Your input value is empty.")
+    } else {
+        if (displayTotal < withdrawInputValue) {
+            alert("Sorry!! Your total balance is not enough to withdraw");
+        } else {
+            const newWithdrawTotal = withdrawDisplayValue + withdrawInputValue;
+            setDisplayValue("display_withdraw", newWithdrawTotal);
+
+
+            const newTotalValue = displayTotal - withdrawInputValue;
+            setDisplayValue("total_value", newTotalValue);
+
+        }
+
+    }
 
 })
