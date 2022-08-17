@@ -20,7 +20,7 @@ const logInForm = document.getElementById('login_form');
 
 // ===========> Banking system start <==========
 // -----> get input value <-----
-const depositWithdrawInput = (idName) => {
+const getInputValue = (idName) => {
     const InputId = document.getElementById(idName);
     const inputValueReceived = parseFloat(InputId.value);
     InputId.value = '';
@@ -46,11 +46,11 @@ const setDisplayValue = (idName, newValue) => {
 document.getElementById('deposit_form').addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const depositInputValue = depositWithdrawInput("deposit_input");
-    const displayDepositValue = getDisplayValue("display_deposit");
+    const depositInputValue = getInputValue("deposit_input");
+    const depositDisplayValue = getDisplayValue("display_deposit");
 
     //-----> set deposit value
-    const newDepositTotal = depositInputValue + displayDepositValue;
+    const newDepositTotal = depositInputValue + depositDisplayValue;
     setDisplayValue("display_deposit", newDepositTotal);
 
     //-----> set total value
@@ -61,3 +61,17 @@ document.getElementById('deposit_form').addEventListener('submit', (e) => {
 
 
 // =====> withdraw functionality <=====
+document.getElementById('withdraw_form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const withdrawInputValue = getInputValue("withdraw_input");
+    const withdrawDisplayValue = getDisplayValue("display_withdraw");
+
+    const newWithdrawTotal = withdrawDisplayValue + withdrawInputValue;
+    setDisplayValue("display_withdraw", newWithdrawTotal);
+
+    const displayTotal = getDisplayValue("total_value");
+    const newTotalValue = displayTotal - withdrawInputValue;
+    setDisplayValue("total_value", newTotalValue);
+
+})
