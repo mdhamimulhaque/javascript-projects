@@ -1,7 +1,3 @@
-
-
-
-
 // -----> string converter function <-----
 const stringConverter = (value) => {
     const stringToNumber = parseInt(value);
@@ -9,6 +5,7 @@ const stringConverter = (value) => {
 }
 
 
+// ----->counter function <------
 
 let isIncrement;
 const counterFunction = (isIncrement, itemCounterId) => {
@@ -38,6 +35,33 @@ const counterFunction = (isIncrement, itemCounterId) => {
     }
 
 }
+
+
+// ======> calculate total & subtotal <======
+
+const totalCost = () => {
+    // ---> iphone 128   
+    const iphone128 = document.getElementById('item_total');
+    const iphone128Value = stringConverter(iphone128.innerHTML);
+    // ---> iphone case
+    const iphoneCase = document.getElementById('item_total_case');
+    const iphoneCaseValue = stringConverter(iphoneCase.innerHTML);
+
+    // ---> sub total
+    const subTotalField = document.getElementById('subtotal_field');
+    const subTotal = iphone128Value + iphoneCaseValue;
+    subTotalField.innerText = subTotal;
+    // ---> tax
+    const taxField = document.getElementById('tax_field');
+    const taxValue = stringConverter(taxField.innerHTML);
+    console.log(taxValue)
+    //  ---> total
+    const totalField = document.getElementById('total_field');
+    const total = iphone128Value + iphoneCaseValue + taxValue;
+    totalField.innerText = total;
+
+}
+
 
 
 

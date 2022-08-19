@@ -5,7 +5,7 @@ const itemTotalIphoneCase = document.getElementById('item_total_case');
 
 // -----> calculate amount function <-----
 const amountCounterIphoneCase = (singleItems) => {
-    const itemTotalPrice = singleItems * 59;
+    const itemTotalPrice = singleItems * 100;
     itemTotalIphoneCase.innerText = itemTotalPrice;
 }
 
@@ -13,8 +13,10 @@ const amountCounterIphoneCase = (singleItems) => {
 
 incrementBtnCase.addEventListener('click', () => {
     counterFunction(true, 'second_item_counter');
+    totalCost()
 });
 
 decrement_btn_case.addEventListener('click', () => {
     counterFunction(false, 'second_item_counter');
+    totalCost()
 })

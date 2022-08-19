@@ -5,17 +5,19 @@ const itemTotalIphone128 = document.getElementById('item_total');
 
 // -----> calculate amount function <-----
 const amountCounterIphone128 = (singleItems) => {
-    const itemTotalPrice = singleItems * 1219;
+    const itemTotalPrice = singleItems * 1200;
     itemTotalIphone128.innerText = itemTotalPrice;
 }
 
 
 incrementBtn.addEventListener('click', () => {
     counterFunction(true, 'item_counter');
+    totalCost()
 });
 
 
 decrementBtn.addEventListener('click', () => {
     counterFunction(false, 'item_counter');
+    totalCost()
 })
 
