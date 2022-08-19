@@ -32,5 +32,45 @@ document.getElementById('all_btns').addEventListener('click', (e) => {
         const pinMatchDisplay_value = pinMatchDisplay.value;
         const multipleClickedBtn = pinMatchDisplay_value + clickedBtnValue;
         pinMatchDisplay.value = multipleClickedBtn;
+    } else {
+        if (clickedBtnValue === 'C') {
+            pinMatchDisplay.value = '';
+        } else if (clickedBtnValue === "<") {
+            const pinMatchDisplay_value = pinMatchDisplay.value;
+            const valueSplit = pinMatchDisplay_value.split('');
+            valueSplit.pop()
+            const finalValue = valueSplit.join('')
+            pinMatchDisplay.value = finalValue;
+        }
     }
+});
+
+
+// =========> match the pin code <==========
+const wrongPinMsg = document.getElementById('wrong_pin');
+const rightPinMsg = document.getElementById('right_pin');
+const chanceId = document.getElementById('chance');
+document.getElementById('submit_pin_btn').addEventListener('click', (e) => {
+
+    if (pinShowDisplay.value == pinMatchDisplay.value) {
+        rightPinMsg.style.display = 'block';
+        wrongPinMsg.style.display = 'none';
+    } else {
+        wrongPinMsg.style.display = 'block';
+        rightPinMsg.style.display = 'none';
+
+        let chanceValue = chanceId.innerText;
+        if (chanceValue > 0) {
+            let newValue = chanceValue - 1;
+            chanceValue = newValue;
+            chanceId.innerText = newValue;
+        } else {
+            alert(`
+            Your try limit is over.
+            Reload the page and try again
+            `);
+            wrongPinMsg.style.display = 'none';
+        }
+    }
+
 })
