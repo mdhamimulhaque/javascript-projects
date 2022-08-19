@@ -14,16 +14,18 @@
     <main class="discount_calculator_area flex items-center justify-center h-screen">
         <div class="discount_calculator_wrapper p-14 lg:w-6/12 bg-green-100 text-center ">
             <h2 class="text-5xl mb-4 font-semibold">Discount Calculator</h2>
-            <h2 class="text-5xl font-semibold mb-4">$ <span id="price">1000</span></h2>
+            <h2 class="text-3xl font-semibold mb-4">Total Price: $<span id="total_price">5000</span> </h2>
 
             <div class="apply_discount_box text-center">
-
                 <button id="discount_btn"
                     class="m-3 p-3 bg-blue-500 rounded hover:bg-blue-300 hover:text-white transition-all">30%
                     Discount</button>
                 <button id="apply_discount_coupon_btn"
                     class=" m-3 p-3 bg-green-500 rounded hover:bg-green-300 hover:text-white transition-all">Apply
                     For 50% Discount</button>
+                <h2 class="text-2xl font-semibold mb-4">Discount Price: <span class="text-red-500">$</span><span
+                        id="price" class="text-red-500">00</span>
+                </h2>
             </div>
         </div>
     </main>
