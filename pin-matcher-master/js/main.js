@@ -21,4 +21,16 @@ const pinShowDisplay = document.getElementById('pin_show_display');
 document.getElementById('pin_generator_btn').addEventListener('click', () => {
     const pinCode = pinCodeFunction();
     pinShowDisplay.value = pinCode;
+});
+
+
+// ==========> check Box work <=========
+const pinMatchDisplay = document.getElementById('pin_match_display');
+document.getElementById('all_btns').addEventListener('click', (e) => {
+    const clickedBtnValue = e.target.innerText;
+    if (!isNaN(clickedBtnValue)) {
+        const pinMatchDisplay_value = pinMatchDisplay.value;
+        const multipleClickedBtn = pinMatchDisplay_value + clickedBtnValue;
+        pinMatchDisplay.value = multipleClickedBtn;
+    }
 })
