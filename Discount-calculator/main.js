@@ -46,7 +46,7 @@ disable_50_Btn.addEventListener('click', (e) => {
             document.getElementById('price').innerText = priceTotal;
             input_field.setAttribute('disabled', 'true');
             disable_50_Btn.setAttribute('disabled', 'true')
-        } else if (input_field.value.length >= 8) {
+        } else if (input_field.value.length >= 6) {
             notice_msg.classList.remove('hidden');
             input_field.setAttribute('disabled', 'true');
             if (confirm("use 'coupon' keyword for discount")) {
