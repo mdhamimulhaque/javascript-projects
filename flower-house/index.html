@@ -47,7 +47,16 @@
 
         <section class="flower_area">
             <h2 class="text-center py-5"><span class="flower">Flower</span> House</h2>
+
             <div class="container">
+                <div class="row">
+                    <section class="search_box mb-5">
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        </form>
+                    </section>
+                </div>
                 <div class="row flower_wrapper">
                     <!-- <div class="col-md-6 col-lg-4 col-xl-3"> -->
 
@@ -56,6 +65,29 @@
             </div>
         </section>
     </main>
+
+
+    <!-- modal body -->
+    <div class="modal fade" id="info" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Details Information</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="common_btn" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="order_btn"
+                        onclick="alert('Sorry!! Our shop is under construction ...')">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- js file -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>

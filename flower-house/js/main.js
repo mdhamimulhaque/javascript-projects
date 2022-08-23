@@ -1,6 +1,7 @@
 // -----> flowers card <-----
 const displayFlowers = (flower) => {
     const flowerWrapper = document.querySelector('.flower_wrapper');
+    const stringFlowersData = JSON.stringify(flower);
     const colum = document.createElement('div');
     colum.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
     colum.innerHTML = `
@@ -9,20 +10,16 @@ const displayFlowers = (flower) => {
     class="card-img-top img-fluid" alt="img">
 <div class="card-body">
     <h5 class="card-title">${flower.name}</h5>
-    <p class="card-text">${flower.info}
-    </p>
+    <p class="card-text">${flower.info}</p>
     <div class="btn_box d-flex justify-content-between">
-        <button href="#" class="common_btn ">Details</button>
-        <button href="#" class="order_btn">Order</button>
+        <button href="#" class="common_btn" data-bs-toggle="modal" data-bs-target="#info" onclick='modalFunction(${stringFlowersData})' >Details</button>
+        <button type="button" class="order_btn" onclick="alert('Sorry!! Our shop is under construction...')" >Order Now</button>
     </div>
 </div>
 </div>
 `;
     flowerWrapper.appendChild(colum);
 }
-
-
-
 
 // -----> flowers data <-----
 const flowersData = (flowers) => {
@@ -31,3 +28,23 @@ const flowersData = (flowers) => {
     }
 }
 flowersData(flowers)
+
+
+// -----> modal <-----
+
+const modalFunction = (stringFlowersData) => {
+    const modalBody = document.querySelector('.modal-body');
+    modalBody.innerHTML = `
+    <div class="card">
+     <img src=${stringFlowersData.img} class="card-img-top" alt="...">
+       <div class="card-body">
+       <h5 class="card-title">${stringFlowersData.name}</h5>
+       <p class="card-text">${stringFlowersData.info}</p>
+       <div class="price_box d-flex justify-content-between">
+       <span>Quantity : ${stringFlowersData.quantity}</span>
+       <span>Price : $${stringFlowersData.price}</span>
+       </div>
+      </div>
+    </div>
+    `;
+}
