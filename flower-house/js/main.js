@@ -1,14 +1,15 @@
-const displayFlowers = () => {
+// -----> flowers card <-----
+const displayFlowers = (flower) => {
     const flowerWrapper = document.querySelector('.flower_wrapper');
     const colum = document.createElement('div');
     colum.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
     colum.innerHTML = `
 <div class="card mb-4">
-<img src="https://images.unsplash.com/photo-1518931479438-62470470be9a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1112&q=80"
+<img src=${flower.img}
     class="card-img-top img-fluid" alt="img">
 <div class="card-body">
-    <h5 class="card-title">Rose</h5>
-    <p class="card-text">Lorem ipsum dolor sit amet sdff sikds kas, adipisicing elit.
+    <h5 class="card-title">${flower.name}</h5>
+    <p class="card-text">${flower.info}
     </p>
     <div class="btn_box d-flex justify-content-between">
         <button href="#" class="common_btn ">Details</button>
@@ -21,10 +22,12 @@ const displayFlowers = () => {
 }
 
 
-displayFlowers();
-displayFlowers();
-displayFlowers();
-displayFlowers();
-displayFlowers();
-displayFlowers();
-displayFlowers();
+
+
+// -----> flowers data <-----
+const flowersData = (flowers) => {
+    for (let flower of flowers) {
+        displayFlowers(flower);
+    }
+}
+flowersData(flowers)
