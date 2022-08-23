@@ -27,7 +27,7 @@ const flowersData = (flowers) => {
         displayFlowers(flower);
     }
 }
-flowersData(flowers)
+flowersData(allFlowersData)
 
 
 // -----> modal <-----
@@ -48,3 +48,19 @@ const modalFunction = (stringFlowersData) => {
     </div>
     `;
 }
+
+// -----> search functionality <-----
+document.getElementById('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const inputValue = document.getElementById('inputField').value;
+    const allFlowersDataLength = allFlowersData.length;
+    for (let i = 0; i < allFlowersDataLength; i++) {
+        const singleFlower = allFlowersData[i];
+        const flowerName = singleFlower.name
+        if (inputValue.toLowerCase() == flowerName.toLowerCase()) {
+            document.querySelector('.flower_wrapper').innerHTML = '';
+            displayFlowers(singleFlower);
+            return;
+        }
+    }
+})

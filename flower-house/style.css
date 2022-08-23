@@ -72,12 +72,16 @@ h2{
     object-fit: cover;
 }
 
-/* header title */
+/* ---> header title <---*/
 .flower{
     color:var(--primary_color);
 }
 
-/* modal */
+/* ---> modal <---*/
 .price_box span{
   font-weight: 500;
+}
+/*---> footer <---*/
+footer{
+    background-color: var(--primary_color);
 }

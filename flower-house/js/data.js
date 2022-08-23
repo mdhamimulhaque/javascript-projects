@@ -1,4 +1,4 @@
-const flowers = [
+const allFlowersData = [
     {
         name: 'Rose',
         info: 'Lorem ipsum dolor sit amet sdff sikds kas, adipisicing elit.',
