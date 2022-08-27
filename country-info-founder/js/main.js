@@ -39,6 +39,8 @@ document.getElementById('search_btn').addEventListener('click', () => {
 
             infoBoxArea.appendChild(div)
         })
-        .catch((err) => { console.log(err) })
+        .catch((err) => {
+            console.log(err)
+        })
 
 })
