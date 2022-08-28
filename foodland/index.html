@@ -19,10 +19,11 @@
     <main class="lg:container mx-auto mt-10 px-5">
         <!-- search-bar start -->
         <section class="search_area mx-auto lg:max-w-2xl relative ">
-            <input type="text" placeholder="Search your recipe here"
+            <input id="search_field" type="text" placeholder="Search your recipe here"
                 class="bg-orange-200 w-full h-10 rounded-3xl outline-0 pl-5">
-            <button
-                class="absolute right-0 top-0 leading-10 px-6 lg:px-8 font-bold tracking-wide bg-orange-300 rounded-3xl outline-0 text-white transition duration-300 hover:bg-orange-400">
+            <button id="search_btn"
+                class="absolute right-0 top-0 leading-10 px-6 lg:px-8 font-bold tracking-wide bg-orange-300 rounded-3xl outline-0 text-white transition duration-300 hover:bg-orange-400"
+                onclick="searchItem()">
                 Search
             </button>
         </section>
@@ -30,22 +31,7 @@
 
         <section class="food_item_area mt-12">
             <div class="food_box_wrapper grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-                <div class="food_item_box drop-shadow-xl p-5 bg-orange-400">
-                    <div class="img_area">
-                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                            alt="">
-                    </div>
-                    <div class="food_info_area">
-                        <h2 class="text-2xl font-medium my-2">Lorem ipsum dolor sit amet.</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi minus non cum ad omnis
-                            provident accusamus qui reiciendis. Sunt nisi vero ipsum voluptatem non doloribus, nulla
-                            fugiat
-                            architecto id sapiente!</p>
-                        <button
-                            class="mt-4 bg-orange-300 px-10 py-3 font-medium tracking-wide transition duration-300 text-white hover:bg-orange-200 hover:text-orange-500">Read
-                            Details</button>
-                    </div>
-                </div>
+                <!-- content area -->
             </div>
         </section>
     </main>
