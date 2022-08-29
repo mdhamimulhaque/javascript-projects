@@ -9,7 +9,7 @@
 // ========================================
 
 // https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?s=Soccer&c=Spain
-//---> all leagues team name !! id-League !! team id !! team name
+//---> all league's team name !! id-League !! team id !! team name
 
 
 // https://www.thesportsdb.com/api/v1/json/2/lookupplayer.php?id=34145395
