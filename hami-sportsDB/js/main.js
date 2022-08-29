@@ -48,19 +48,15 @@ const leagueTeamList = async (country) => {
 }
 
 const teamContainer = document.querySelector('.team_container');
-const teamInfoContainer = document.querySelector('.team_info_container');
 const teamWrapper = document.querySelector('.team_wrapper');
 const teamsArea = document.querySelector('.teams_area');
 
 // -----> show all teams
 const showTeams = (teamsData) => {
-    // console.log(teamsData)
     leagueArea.innerHTML = "";
     teamsArea.classList.remove('hidden');
     // ---> team box create
     teamsData.forEach(team => {
-        console.log(team)
-
         const teamBoxArea = document.createElement('div');
         teamBoxArea.classList.add('team_box_area');
         teamBoxArea.innerHTML = `
@@ -70,6 +66,7 @@ const showTeams = (teamsData) => {
                                 <p class="text-white">${team.strDescriptionEN.slice(0, 200)}...</p>
                                 <button
                                     class="mt-3 bg-rose-300 py-2 px-3 rounded font-medium tracking-wide transition duration-300 hover:bg-rose-600 hover:text-white"
+                                   onclick={teamInfoDisplay(${teamsData})}
                                     >
                                     Team Details
                                 </button>
@@ -77,5 +74,32 @@ const showTeams = (teamsData) => {
         `;
         teamWrapper.appendChild(teamBoxArea);
     })
+
+}
+
+
+// --------------> team data load
+
+
+const teamInfoWrapper = document.querySelector('.team_info_wrapper');
+
+// -----> team information display
+const teamInfoDisplay = (x) => {
+    console.log(x)
+    teamInfoWrapper.innerHTML = '';
+    const teamInfoBox = document.createElement('div');
+    teamInfoBox.classList.add('team_info_box');
+    teamInfoBox.innerHTML = `
+                       <img src="" alt="">
+                        <h2 class="text-2xl"><strong>Team : </strong> strTeam</h2>
+                        <p><strong>description : </strong> strDescriptionEN</p>
+
+                        <p><strong>League : </strong> "strLeague</p>
+                        <p><strong>Stadium : </strong> strStadium</p>
+                        <p><strong>Stadium Description :</strong>strStadiumDescription</p>
+                        <span><strong>strGender : </strong> Male</span>
+    `;
+
+    teamInfoWrapper.appendChild(teamInfoBox)
 
 }
