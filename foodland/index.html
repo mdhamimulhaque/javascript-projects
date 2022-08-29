@@ -16,7 +16,7 @@
         <h2 class="text-center text-4xl lg:text-6xl font-bold">Food <span class="text-orange-500">Recipes Library</span>
         </h2>
     </header>
-    <main class="lg:container mx-auto mt-10 px-5">
+    <main class="lg:container mx-auto mt-10 px-5" style="min-height: 65vh">
         <!-- search-bar start -->
         <section class="search_area mx-auto lg:max-w-2xl relative ">
             <input id="search_field" type="text" placeholder="Search your recipe here"
@@ -36,8 +36,16 @@
         </section>
     </main>
 
-    <footer class="mt-10 py-16 bg-orange-500 text-center text-sm font-bold">
-        <h6>Copyright © Developed by <span class="text-white">Md Hamimul Haque</span></h6>
+    <!-- modal -->
+    <div class="modal_area fixed top-0 left-0 h-screen w-full flex justify-center items-center hidden"
+        style="background-color: rgba(0, 0, 0, 0.394)">
+        <div class="modal_wrapper w-96 bg-orange-300 p-10 ">
+
+        </div>
+    </div>
+
+    <footer class="mt-10 py-16 bg-orange-500 text-center text-sm font-bold px-2">
+        <h6>Copyright © Developed by <br><span class="text-white">Md Hamimul Haque</span></h6>
     </footer>
 
 
