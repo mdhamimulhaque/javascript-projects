@@ -8,7 +8,7 @@ document.getElementById('search_btn').addEventListener('click', () => {
 // -----> load data
 const dataLoad = async (inputValue) => {
     try {
-        const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=oppo`)
+        const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
         const data = await res.json()
             .then(data => displayProduct(data.data))
 
@@ -21,6 +21,16 @@ const dataLoad = async (inputValue) => {
 // -----> product display
 const productRow = document.getElementById('phone_row');
 const displayProduct = (data) => {
+    // ---> data slice
+    data = data.slice(0, 6)
+    // --->search error msg
+    const searchErrorMsg = document.querySelector('.search_msg');
+    if (data.length === 0) {
+        searchErrorMsg.classList.remove('d-none');
+    } else {
+        searchErrorMsg.classList.add('d-none');
+    }
+
     data.forEach(product => {
         const productCol = document.createElement('div');
         productCol.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
@@ -32,7 +42,7 @@ const displayProduct = (data) => {
                                     <h5 class="card-title d-flex justify-content-between">${product.phone_name}  
                                     <span class="card-text badge bg-secondary py-2 ">${product.brand}</span>
                                     </h5>                       
-                                    <a href="#" class="btn btn-primary d-block fw-semibold"
+                                    <a href="#" class="btn btn-primary d-block fw-semibold mt-2"
                                     onclick="productDetailsDataLoad('${product.slug}')"
                                     data-bs-toggle="modal" data-bs-target="#productDetails"
                                     >
@@ -73,7 +83,8 @@ const productDetails = (productData) => {
     // ---> modal Body
     cardBody.innerHTML = `
         <div class="card">
-            <img src="${productData.image}" class="card-img-top" alt="img">
+            <div class="mx-auto">
+            <img src="${productData.image}" class="card-img-top  pt-4" alt="img"></div>
             <div class="card-body">
                 <h4 class="card-title">${productData.brand}</h4>
                 <p><strong>Release Date :</strong> ${productData.releaseDate}</p>
