@@ -1,19 +1,23 @@
-// -----> input value
-document.getElementById('search_btn').addEventListener('click', () => {
+const searchDataFunctionality = (productLimit) => {
     // ---> spinner show 
     dataLoading(true)
-
     const inputValue = document.getElementById('input_field').value;
-    dataLoad(inputValue)
+    dataLoad(inputValue, productLimit)
+}
+
+
+// -----> input value
+document.getElementById('search_btn').addEventListener('click', () => {
+    searchDataFunctionality(10)
 })
 
 
 // -----> load data
-const dataLoad = async (inputValue) => {
+const dataLoad = async (inputValue, productLimit) => {
     try {
         const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${inputValue}`)
         const data = await res.json()
-            .then(data => displayProduct(data.data))
+            .then(data => displayProduct(data.data, productLimit))
 
     } catch (err) {
         console.log(err)
@@ -22,10 +26,17 @@ const dataLoad = async (inputValue) => {
 
 
 // -----> product display
+
 const productRow = document.getElementById('phone_row');
-const displayProduct = (data) => {
+const displayProduct = (data, productLimit) => {
+    const ShowAllBtnWrapper = document.getElementById('show_all_btn_wrapper');
     // ---> data slice
-    data = data.slice(0, 6)
+    if (productLimit && data.length > 10) {
+        data = data.slice(0, 10);
+        ShowAllBtnWrapper.classList.remove('d-none');
+    } else {
+        ShowAllBtnWrapper.classList.add('d-none')
+    }
 
     // --->search error msg
     const searchErrorMsg = document.querySelector('.search_msg');
@@ -117,3 +128,8 @@ const dataLoading = isLoading => {
         loadingSpinner.classList.add('d-none');
     }
 }
+
+// -----> show all data 
+document.getElementById('show_all_btn').addEventListener('click', () => {
+    searchDataFunctionality()
+})
