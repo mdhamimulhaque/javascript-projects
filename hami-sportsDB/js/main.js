@@ -57,6 +57,7 @@ const showTeams = (teamsData) => {
     teamsArea.classList.remove('hidden');
     // ---> team box create
     teamsData.forEach(team => {
+        // console.log(team)
         const teamData = JSON.stringify(team);
         const teamBoxArea = document.createElement('div');
         teamBoxArea.classList.add('team_box_area');
@@ -87,7 +88,7 @@ const teamInfoWrapper = document.querySelector('.team_info_wrapper');
 
 // -----> team information display
 const teamInfoDisplay = (teamData) => {
-
+    console.log(teamData)
     teamInfoWrapper.innerHTML = '';
     const teamInfoBox = document.createElement('div');
     teamInfoBox.classList.add('team_info_box');
@@ -99,7 +100,6 @@ const teamInfoDisplay = (teamData) => {
                         <p><strong>League : </strong>${teamData.strLeague}</p>
                         <p><strong>Stadium : </strong>${teamData.strStadium}</p>
                         <p><strong>Stadium Description : </strong>${teamData.strStadiumDescription}</p>
-                        <span><strong>strGender : </strong>${teamData.Male}</span>
     `;
 
     teamInfoWrapper.appendChild(teamInfoBox)
