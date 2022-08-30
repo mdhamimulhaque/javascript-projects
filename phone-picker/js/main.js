@@ -6,9 +6,16 @@ const searchDataFunctionality = (productLimit) => {
 }
 
 
-// -----> input value
+// -----> input value show by button click
 document.getElementById('search_btn').addEventListener('click', () => {
     searchDataFunctionality(10)
+})
+// -----> input value show by enter press
+document.getElementById('input_field').addEventListener('keypress', (e) => {
+    if (e.key === "Enter") {
+        searchDataFunctionality(10)
+    }
+
 })
 
 
