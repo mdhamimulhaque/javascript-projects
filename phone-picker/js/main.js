@@ -1,5 +1,8 @@
-// ---> input value
+// -----> input value
 document.getElementById('search_btn').addEventListener('click', () => {
+    // ---> spinner show 
+    dataLoading(true)
+
     const inputValue = document.getElementById('input_field').value;
     dataLoad(inputValue)
 })
@@ -23,6 +26,7 @@ const productRow = document.getElementById('phone_row');
 const displayProduct = (data) => {
     // ---> data slice
     data = data.slice(0, 6)
+
     // --->search error msg
     const searchErrorMsg = document.querySelector('.search_msg');
     if (data.length === 0) {
@@ -52,7 +56,9 @@ const displayProduct = (data) => {
                             </div>
                         </div>
     `;
-        productRow.appendChild(productCol)
+        productRow.appendChild(productCol);
+        // ---> spinner hide
+        dataLoading(false)
     })
 }
 
@@ -99,4 +105,15 @@ const productDetails = (productData) => {
             </ul>
         </div>
     `
+}
+
+
+// ------>Loading spinner
+const dataLoading = isLoading => {
+    const loadingSpinner = document.getElementById('load_spinner');
+    if (isLoading) {
+        loadingSpinner.classList.remove('d-none');
+    } else {
+        loadingSpinner.classList.add('d-none');
+    }
 }

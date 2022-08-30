@@ -20,7 +20,7 @@
             <div class="container">
                 <a class="navbar-brand fw-bold">Phone Picker</a>
                 <div class="search_box d-flex justify-content-between">
-                    <input id="input_field" class="form-control me-2" type="search" placeholder="Search"
+                    <input id="input_field" class="form-control me-2" type="search" placeholder="Search Your product"
                         aria-label="Search">
                     <button id="search_btn" class="btn btn-outline-success" type="submit">Search</button>
                 </div>
@@ -37,11 +37,22 @@
                     <!-- product content area -->
                     <!-- -------------------- -->
                 </div>
-                <!--search notice message-->
-                <div class="search_msg text-center d-none">
-                    <h4 class="text-danger">No result found.Try again!!!</h4>
-                </div>
-
+            </div>
+        </section>
+        <!--search notice message-->
+        <section class="search_msg text-center d-none">
+            <h4 class="text-danger">No result found.Try again!!!</h4>
+        </section>
+        <!--loading spinner -->
+        <section id="load_spinner" class="text-center d-none">
+            <div class="spinner-grow text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
             </div>
         </section>
     </main>
