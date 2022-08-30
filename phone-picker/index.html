@@ -19,11 +19,11 @@
         <nav class="navbar bg-light">
             <div class="container">
                 <a class="navbar-brand fw-bold">Phone Picker</a>
-                <form class="d-flex" role="search">
+                <div class="search_box d-flex justify-content-between">
                     <input id="input_field" class="form-control me-2" type="search" placeholder="Search"
                         aria-label="Search">
                     <button id="search_btn" class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                </div>
             </div>
         </nav>
     </header>
@@ -40,6 +40,30 @@
             </div>
         </div>
     </main>
+
+    <!-- modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="productDetails" tabindex="-1" aria-labelledby="productDetailsLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="model_title" class="modal-title" id="productDetailsLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- -------------------- -->
+                    <!-- modal body content -->
+                    <!-- -------------------- -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 
