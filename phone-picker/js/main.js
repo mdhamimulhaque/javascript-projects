@@ -57,9 +57,9 @@ const displayProduct = (data) => {
                         </div>
     `;
         productRow.appendChild(productCol);
-        // ---> spinner hide
-        dataLoading(false)
     })
+    // ---> spinner hide
+    dataLoading(false)
 }
 
 // ----->Load product details data
@@ -78,7 +78,7 @@ const productDetailsDataLoad = async (id) => {
 }
 
 
-// -----> show product details
+// -----> show product details with modal
 const modalTitle = document.getElementById("model_title");
 const cardBody = document.querySelector(".modal-body");
 
