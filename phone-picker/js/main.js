@@ -47,17 +47,20 @@ const displayProduct = (data, productLimit) => {
 
     // --->search error msg
     const searchErrorMsg = document.querySelector('.search_msg');
+    const default_text_area = document.querySelector('.default_text_area');
     if (data.length === 0) {
         searchErrorMsg.classList.remove('d-none');
+        default_text_area.classList.add('d-none');
     } else {
         searchErrorMsg.classList.add('d-none');
+        default_text_area.classList.add('d-none');
     }
 
     data.forEach(product => {
         const productCol = document.createElement('div');
         productCol.classList.add('col-md-6', 'col-lg-4', 'col-xl-3');
         productCol.innerHTML = `
-                        <div class="phone_wrapper mb-4">
+                        <div class="phone_wrapper my-4">
                             <div class="card">
                                 <img src="${product.image}" class="card-img-top p-4" alt="img">
                                 <div class="card-body">
