@@ -20,16 +20,16 @@ const showAllLeague = (countries) => {
         leaguesWrapper.classList.add('leagues_wrapper');
         leaguesWrapper.innerHTML = `
         <div
-        class="league_items_box cursor-pointer p-6 bg-rose-600 rounded transition duration-300 hover:drop-shadow-xl hover:bg-rose-400 "
+        class="league_items_box min-h-96 cursor-pointer p-6 bg-rose-600 rounded transition duration-300 hover:drop-shadow-xl hover:bg-rose-400 "
         >
-        <img src='${country.strBadge}' />
+        <img class='w-3/5 mx-auto' src='${country.strBadge}' />
         <h2 class="text-lg font-semibold text-white mb-2"> ${country.strLeague}</h2>
         <p><strong>Gender : </strong>${country.strGender}</p>
         <button
             class='mt-3 bg-rose-300 py-2 px-3 rounded font-medium tracking-wide transition duration-300 hover:bg-rose-600 hover:text-white'
-            onclick={leagueTeamList('${country.strCountry}')}
+            onclick="leagueTeamList('${country.strCountry}')"
             >
-            Show Details
+            Show All Teams
             <button>
        </div>
         `;
@@ -57,16 +57,18 @@ const showTeams = (teamsData) => {
     teamsArea.classList.remove('hidden');
     // ---> team box create
     teamsData.forEach(team => {
+        const teamData = JSON.stringify(team);
         const teamBoxArea = document.createElement('div');
         teamBoxArea.classList.add('team_box_area');
         teamBoxArea.innerHTML = `
                          <div class="team_box p-6 bg-slate-800 rounded transition duration-300 hover:drop-shadow-xl  ">
-                                <img src="${team.strTeamBadge}" alt="">
-                                <h2 class="text-2xl text-rose-600 font-semibold mb-2"><span>Team : </span>${team.strTeam}</h2>
-                                <p class="text-white">${team.strDescriptionEN.slice(0, 200)}...</p>
+                                <img class='w-3/5 mx-auto' src="${team?.strTeamBadge}" alt="">
+                                <h2 class="text-2xl text-rose-600 font-semibold my-2"><span>Team : </span>${team?.strTeam}</h2>
+                                <p class="text-white">${team?.strDescriptionEN.slice(0, 200)}...</p>
+                                <p class='text-white'>${team?.strLeague}</p>
                                 <button
                                     class="mt-3 bg-rose-300 py-2 px-3 rounded font-medium tracking-wide transition duration-300 hover:bg-rose-600 hover:text-white"
-                                   onclick={teamInfoDisplay(${teamsData})}
+                                   onclick='teamInfoDisplay(${teamData})'
                                     >
                                     Team Details
                                 </button>
@@ -84,20 +86,20 @@ const showTeams = (teamsData) => {
 const teamInfoWrapper = document.querySelector('.team_info_wrapper');
 
 // -----> team information display
-const teamInfoDisplay = (x) => {
-    console.log(x)
+const teamInfoDisplay = (teamData) => {
+
     teamInfoWrapper.innerHTML = '';
     const teamInfoBox = document.createElement('div');
     teamInfoBox.classList.add('team_info_box');
     teamInfoBox.innerHTML = `
-                       <img src="" alt="">
-                        <h2 class="text-2xl"><strong>Team : </strong> strTeam</h2>
-                        <p><strong>description : </strong> strDescriptionEN</p>
+                       <img src=${teamData.strTeam} alt="">
+                        <h2 class="text-2xl"><strong>Team : </strong> ${teamData.strTeam}</h2>
+                        <p><strong>description : </strong>${teamData.strDescriptionEN}</p>
 
-                        <p><strong>League : </strong> "strLeague</p>
-                        <p><strong>Stadium : </strong> strStadium</p>
-                        <p><strong>Stadium Description :</strong>strStadiumDescription</p>
-                        <span><strong>strGender : </strong> Male</span>
+                        <p><strong>League : </strong>${teamData.strLeague}</p>
+                        <p><strong>Stadium : </strong>${teamData.strStadium}</p>
+                        <p><strong>Stadium Description : </strong>${teamData.strStadiumDescription}</p>
+                        <span><strong>strGender : </strong>${teamData.Male}</span>
     `;
 
     teamInfoWrapper.appendChild(teamInfoBox)
