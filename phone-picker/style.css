@@ -4,10 +4,13 @@
     box-sizing: border-box;
 }
 
+.logo{
+    color:#31D2F2;
+}
 .default_text_area {
     height: 100vh;
     width: 100%;
-    background-color: rgba(30, 143, 255, 0.599);
+    background-color: #31D2F2;
     display: flex;
     align-content: center;
     justify-content: center;

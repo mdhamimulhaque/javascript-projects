@@ -67,7 +67,7 @@ const displayProduct = (data, productLimit) => {
                                     <h5 class="card-title d-flex justify-content-between">${product.phone_name}  
                                     <span class="card-text badge bg-secondary py-2 ">${product.brand}</span>
                                     </h5>                       
-                                    <a href="#" class="btn btn-primary d-block fw-semibold mt-2"
+                                    <a href="#" class="btn btn-info text-white d-block fw-semibold mt-2"
                                     onclick="productDetailsDataLoad('${product.slug}')"
                                     data-bs-toggle="modal" data-bs-target="#productDetails"
                                     >
@@ -118,10 +118,10 @@ const productDetails = (productData) => {
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"></li>
-                <li class="list-group-item"><strong>Chip :</strong> ${productData.mainFeatures.chipSet}</li>
-                <li class="list-group-item"><strong>Memory :</strong> ${productData.mainFeatures.memory}</li>
-                <li class="list-group-item"><strong>Bluetooth :</strong> ${productData.others.Bluetooth}</li>
-                <li class="list-group-item"><strong>USB :</strong> ${productData.others.USB}</li>
+                <li class="list-group-item"><strong>Chip :</strong> ${productData.mainFeatures.chipSet ? productData.mainFeatures.chipSet : 'No info text-whitermation available'}</li>
+                <li class="list-group-item"><strong>Memory :</strong> ${productData.mainFeatures.memory ? productData.mainFeatures.memory : 'No info text-whitermation available'}</li>
+                <li class="list-group-item"><strong>Bluetooth :</strong> ${productData.others.Bluetooth ? productData.others.Bluetooth : 'No info text-whitermation available'}</li>
+                <li class="list-group-item"><strong>USB :</strong> ${productData.others.USB ? productData.others.USB : 'No info text-whitermation available'}</li>
                 
             </ul>
         </div>

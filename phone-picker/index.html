@@ -15,14 +15,14 @@
 
 <body>
     <!-- header -->
-    <header>
+    <header class="py-3">
         <nav class="navbar bg-light">
             <div class="container">
-                <a class="navbar-brand fw-bold">Phone Picker</a>
+                <a class="navbar-brand fw-bold fs-3">Phone <span class="logo">Picker</span></a>
                 <div class="search_box d-flex justify-content-between">
                     <input id="input_field" class="form-control me-2" type="search" placeholder="Search Your product"
                         aria-label="Search">
-                    <button id="search_btn" class="btn btn-outline-success" type="submit">Search</button>
+                    <button id="search_btn" class="btn btn-info text-white" type="submit">Search</button>
                 </div>
             </div>
         </nav>
@@ -45,24 +45,24 @@
         </section>
         <!-- show all btn area -->
         <section id="show_all_btn_wrapper" class="show_all text-center my-3 d-none">
-            <button id="show_all_btn" class="btn btn-primary">Show All Products</button>
+            <button id="show_all_btn" class="btn btn-info text-white">Show All Products</button>
         </section>
         <!--loading spinner -->
         <section id="load_spinner" class="text-center d-none">
-            <div class="spinner-grow text-primary" role="status">
+            <div class="spinner-grow text-info" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            <div class="spinner-border text-primary" role="status">
+            <div class="spinner-border text-info" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
-            <div class="spinner-grow text-primary" role="status">
+            <div class="spinner-grow text-info" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
         </section>
         <!-- show default text inside home page  -->
         <section class="default_text_area">
             <h2>Get your phone's information</h2>
-            <p>(<span class="phn_name">Samsang,iphone,huawei,oppo</span> phones only)</p>
+            <p>(<span class="phn_name">Samsung,iphone,huawei,oppo</span> phones only)</p>
         </section>
     </main>
 
@@ -83,8 +83,8 @@
                     <!-- -------------------- -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info text-white">Save changes</button>
                 </div>
             </div>
         </div>
