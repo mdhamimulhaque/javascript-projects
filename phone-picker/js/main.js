@@ -104,7 +104,7 @@ const modalTitle = document.getElementById("model_title");
 const cardBody = document.querySelector(".modal-body");
 
 const productDetails = (productData) => {
-    const seasons = productData.mainFeatures.sensors
+    const seasons = productData.mainFeatures.sensors;
     // --->modal title
     modalTitle.innerText = `${productData.name}`;
     // ---> modal Body
@@ -118,10 +118,12 @@ const productDetails = (productData) => {
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"></li>
-                <li class="list-group-item"><strong>Chip :</strong> ${productData.mainFeatures.chipSet ? productData.mainFeatures.chipSet : 'No info text-whitermation available'}</li>
-                <li class="list-group-item"><strong>Memory :</strong> ${productData.mainFeatures.memory ? productData.mainFeatures.memory : 'No info text-whitermation available'}</li>
-                <li class="list-group-item"><strong>Bluetooth :</strong> ${productData.others.Bluetooth ? productData.others.Bluetooth : 'No info text-whitermation available'}</li>
-                <li class="list-group-item"><strong>USB :</strong> ${productData.others.USB ? productData.others.USB : 'No info text-whitermation available'}</li>
+                <li class="list-group-item"><strong>Chip :</strong> ${productData?.mainFeatures?.chipSet ? productData.mainFeatures.chipSet : 'No info text-whitermation available'}</li>
+                <li class="list-group-item"><strong>Memory :</strong> ${productData?.mainFeatures.memory ? productData.mainFeatures.memory : 'No info text-whitermation available'}</li>
+                <li class="list-group-item"><strong>Bluetooth :</strong> ${productData?.others?.Bluetooth ? productData.others.Bluetooth : 'No info text-whitermation available'}</li>
+                <li class="list-group-item"><strong>USB :</strong> ${productData?.others?.USB ? productData.others.USB : 'No info text-whitermation available'}</li>
+
+                <li class="list-group-item"><strong>seasons : </strong>${seasons.map(ss => ss)}</li>
                 
             </ul>
         </div>
