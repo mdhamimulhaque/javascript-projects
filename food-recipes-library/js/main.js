@@ -1,14 +1,16 @@
 
 // ---> load search data
-const dataLoad = async (searchValue) => {
+const dataLoad = async () => {
+
     try {
-        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
+        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=fish`)
         const data = await res.json()
             .then(data => showData(data.meals))
     } catch (err) {
         console.log(err)
     }
 }
+dataLoad()
 
 // ---> show search data
 const showData = (data) => {
@@ -40,10 +42,17 @@ const showData = (data) => {
 
 }
 
+
 // ---> search items
-const searchItem = () => {
+const searchItem = async () => {
     const searchFieldValue = document.getElementById('search_field').value;
-    dataLoad(searchFieldValue)
+    try {
+        const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchFieldValue}`)
+        const data = await res.json()
+            .then(data => showData(data.meals))
+    } catch (err) {
+        console.log(err)
+    }
 }
 
 // ---> meal details
