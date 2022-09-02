@@ -1,3 +1,5 @@
+const productRow = document.getElementById('phone_row');
+
 const searchDataFunctionality = (productLimit) => {
     // ---> spinner show 
     dataLoading(true)
@@ -8,6 +10,7 @@ const searchDataFunctionality = (productLimit) => {
 
 // -----> input value show by button click
 document.getElementById('search_btn').addEventListener('click', () => {
+    productRow.innerHTML = '';
     searchDataFunctionality(10)
 })
 // -----> input value show by enter press
@@ -34,7 +37,6 @@ const dataLoad = async (inputValue, productLimit) => {
 
 // -----> product display
 
-const productRow = document.getElementById('phone_row');
 const displayProduct = (data, productLimit) => {
     const ShowAllBtnWrapper = document.getElementById('show_all_btn_wrapper');
     // ---> data slice
