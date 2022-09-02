@@ -1,9 +1,6 @@
 // https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?c=England
 //---> all leagues in a country  !! id-league
 
-// https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=Danny%20Welbeck
-//-----> player id !! team id
-
 // https://www.thesportsdb.com/api/v1/json/2/all_leagues.php
 //---> all leagues !! idLeague
 // ========================================

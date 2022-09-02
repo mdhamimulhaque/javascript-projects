@@ -35,6 +35,8 @@ const showAllLeague = (countries) => {
         `;
         leagueArea.appendChild(leaguesWrapper);
     })
+    const textBox = document.querySelector('.text_box');
+    textBox.classList.add('hidden')
 
 }
 
