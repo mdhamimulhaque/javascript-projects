@@ -1,18 +1,31 @@
 const projectWrapper = document.querySelector('.projects_wrapper');
-const projectBox = document.createElement('div');
-projectBox.classList.add('project_box');
-projectBox.innerHTML = `
+
+projectData.forEach(projectInfo => {
+    const { title, style, description, live, CodeLink } = projectInfo;
+    const projectBox = document.createElement('div');
+    projectBox.classList.add('project_box');
+    projectBox.innerHTML = `
 <div class="card w-96 bg-base-100 shadow-xl">
 <div class="card-body">
-    <h2 class="card-title">Shoes!</h2>
-    <p>HTML5 || CSS3 || Bootstrap || tailwind css</p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo, quas!</p>
+    <h2 class="card-title">${title}</h2>
+    <p>${style}</p>
+    <p>${description}</p>
     <div class="card-actions justify-end">
-        <div class="badge badge-outline">Live</div>
-        <div class="badge badge-outline">Code</div>
+        <div class="badge badge-outline">
+        <a href=${live}>
+        LIve
+        </a>
+        </div>
+        <div class="badge badge-outline">
+        <a href=${CodeLink}>
+        Code
+        </a>
+        </div>
     </div>
 </div>
 </div>
 `;
 
-projectWrapper.appendChild(projectBox)
+    projectWrapper.appendChild(projectBox)
+
+})
